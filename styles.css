@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #00f7ff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+section {
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="cargo"],
+input[type="number"],
+input[type="tel"] {
+  width: 40%; /* ou qualquer outro valor desejado */
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="date"] {
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #00f7ff;
+}
+
+/* Estilos específicos para filiação */
+.filiacao-label {
+  display: inline-block;
+  width: 60px;
+}
+
+.filiacao-input {
+  width: 40%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

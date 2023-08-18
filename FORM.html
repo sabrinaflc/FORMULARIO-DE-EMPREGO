@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Criando Formulário em HTML</title>
+  <script>
+    function formatarCPF(campo) {
+      campo.value = campo.value
+        .replace(/\D/g, '') // Remove tudo que não for dígito
+        .replace(/(\d{3})(\d)/, '$1.$2') // Coloca ponto após os primeiros 3 dígitos
+        .replace(/(\d{3})(\d)/, '$1.$2') // Coloca ponto após os próximos 3 dígitos
+        .replace(/(\d{3})(\d{2})$/, '$1-$2'); // Coloca hífen após os últimos 2 dígitos
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background-color: #333;
+      color: #00f7ff;
+      padding: 20px;
+    }
+  
+    h1 {
+      margin: 0;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  
+    form {
+      display: grid;
+      grid-gap: 10px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="cargo"],
+    input[type="number"],
+    input[type="tel"] {
+      width: 40%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+    input[type="date"] {
+      width: 20%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    button[type="submit"]:hover {
+      background-color: #00f7ff;
+    }
+  
+    /* Estilos específicos para filiação */
+    .filiacao-label {
+      display: inline-block;
+      width: 60px;
+    }
+  
+    .filiacao-input {
+      width: 40%;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>FICHA DE CADASTRO E SOLICITAÇÃO DE EMPREGO</h1>
+  </header>
+
+  <section>
+    <form method="post" action="processar_formulario.php">
+      EMPRESA:<input type="text" name="empresa" placeholder="Informe o nome da empresa"><br>
+      Cargo Pretendido:<input type="text" name="cargo" placeholder="Informe o cargo"><br><br>
+      Pretensão Salarial:<input type="text" name="salario" placeholder="Informe a pretensão salarial"><br><br>
+      Nome do Candidato:<input type="text" name="nome" placeholder="Informe seu nome completo"><br><br>
+      Endereço:<input type="text" name="endereco" placeholder="Informe seu endereço"><br><br>
+      Nº:<input type="text" name="número" placeholder="Informe o número da residência"><br><br>
+      Sala/Apto:<input type="text" name="sala" placeholder="Digite aqui"><br><br>
+      Bairro:<input type="text" name="bairro" placeholder="Digite aqui"><br><br>
+      CEP:<input type="text" name="cep" placeholder="Digite aqui" maxlength="8"><br><br>
+      Cidade:<input type="text" name="cidade" placeholder="Digite aqui"><br><br>
+      UF:<input type="text" name="uf" placeholder="Digite aqui"><br><br>
+      Telefone Nº:<input type="tel" name="telefone" placeholder="Digite aqui"><br><br>
+      Fax Nº:<input type="number" name="fax" placeholder="Digite aqui"><br><br>
+      Telefone p/ Recado N:<input type="tel" name="telefone2" placeholder="Digite aqui"><br><br>
+      Fax Nº:<input type="number" name="fax" placeholder="Digite aqui"><br><br>
+
+      <label class="filiacao-label">Filiação:</label>
+      <input type="text" name="mae" class="filiacao-input" placeholder="Nome da Mãe">
+      <input type="text" name="pai" class="filiacao-input" placeholder="Nome do Pai"><br><br>
+      Data de Nascimento:<input type="date" name="dataNasc" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br>
+      Local de Origem:<input type="text" name="local" placeholder="Digite aqui"><br><br>
+      UF:<input type="text" name="uf2" placeholder="Digite aqui"><br><br>
+      Carteira de Trabalho:<input type="number" name="cart" placeholder="Digite aqui"><br><br>
+      Serie:<input type="text" name="serie" placeholder="Digite aqui"><br><br>
+      CPF:<input type="text" name="CPF" placeholder="Informe seu CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" oninput="formatarCPF(this)" title="Digite um CPF válido (###.###.###-##)"><br><br>
+      
+      Título eleitoral:<input type="number" name="tit" placeholder="Digite aqui"><br><br>
+      Zona:<input type="number" name="zona" placeholder="Digite aqui"><br><br>
+      Seção:<input type="number" name="secao" placeholder="Digite aqui"><br><br>
+      UF:<input type="text" name="uf3" placeholder="Digite aqui"><br><br>
+      Carteira de identidade:<input type="number" name="cart" placeholder="Digite aqui"><br><br>
+      Órgão Emissor:<input type="text" name="org" placeholder="Digite aqui"><br><br>
+      Data:<input type="date" name="data" placeholder="Digite aqui"><br><br>
+      Certif. de Reservista Nº:<input type="number" name="certif" placeholder="Digite aqui"><br><br>
+      Série:<input type="number" name="serie" placeholder="Digite aqui"><br><br>
+      Categoria:<input type="text" name="cat" placeholder="Digite aqui"><br><br>
+      PIS Nº:<input type="number" name="pis" placeholder="Digite aqui"><br><br>
+      Cadastro em:<input type="date" name="cad" placeholder="Digite aqui"><br><br>
+      Banco:<input type="text" name="banco" placeholder="Digite aqui"><br><br>
+      Ag:<input type="number" name="ag" placeholder="Digite aqui"><br><br>
+     
+      Nome do Banco:<input type="text" name="nomebanco" placeholder="Digite aqui"><br><br>
+      Endereço do Banco:<input type="text" name="enderecobanco" placeholder="Digite aqui"><br><br>
+      Nome do Candidato:<input type="text" name="nome" placeholder="Digite aqui"><br><br>
+      Grau de instrução:<input type="text" name="grau" placeholder="Digite aqui"><br><br>
+      Estado Civil:<input type="text" name="nome" placeholder="Digite aqui"><br><br>
+      Nome do Cônjuge:<input type="text" name="nome conj" placeholder="Digite aqui"><br><br>
+      <label>
+        Tem Filhos Menores de 14 anos?:
+        <br><br><input type="checkbox" name="qf" value="Sim">
+        Sim
+      </label>
+      <label>
+        <input type="checkbox" name="qf" value="Não">
+        Não
+      </label>
+      <br><br>
+      Quantos?<input type="number" name="qnt" placeholder="Digite aqui"><br><br>
+      Favor Anexar Cópias das Certidões <br><br>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="fileInput">
+      </form>
+
+      <br><br>
+
+      Nome:<input type="text" name="filho1" placeholder="Digite aqui">
+      Data de Nascimento:<input type="date" name="df1" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br>
+      
+      Nome:<input type="text" name="filho2" placeholder="Digite aqui">
+      Data de Nascimento:<input type="date" name="df2" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br>
+      
+      Nome:<input type="text" name="filho3" placeholder="Digite aqui">
+      Data de Nascimento:<input type="date" name="df3" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br>
+      
+      Nome:<input type="text" name="filho4" placeholder="Digite aqui">
+      Data de Nascimento:<input type="date" name="df4" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br><br>
+      
+      
+      EMPREGOS ANTERIORES <br><br><br>
+
+      Empresa:<input type="text" name="empresa1" placeholder="Digite aqui">
+      Tel:<input type="tel" name="tel1" placeholder="Digite aqui"><br><br>
+      Admissão:<input type="date" name="a1" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)">
+      Demissão:<input type="date" name="d1" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br><br><br>
+     
+      Empresa:<input type="text" name="empresa1" placeholder="Digite aqui">
+      Tel:<input type="tel" name="tel2" placeholder="Digite aqui"><br><br>
+      Admissão:<input type="date" name="a2" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)">
+      Demissão:<input type="date" name="d2" placeholder="Informe sua data de nascimento" pattern="\d{2}/\d{2}/\d{4}" title="Digite uma data válida (dd/mm/yyyy)"><br><br>
+     
+      <br><br>INFORMAÇÕES PESSOAIS <br><br><br>
+
+      Nome:<input type="text" name="nome" placeholder="Digite aqui">
+      Tel:<input type="tel" name="tel3" placeholder="Digite aqui"><br><br>
+      
+      Nome:<input type="text" name="nome" placeholder="Digite aqui">
+      Tel:<input type="tel" name="tel3" placeholder="Digite aqui"><br><br>
+      
+      <br><br>OUTRAS INFORMAÇÕES <br><br>
+      <input type="text" placeholder="Digite aqui"> </p><br>
+      Assinatura do candidato <br><br>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="fileInput">
+      </form><br><br>
+      <button type="submit" placeholder="Digite aqui">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>
